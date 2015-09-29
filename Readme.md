@@ -1,5 +1,8 @@
 # Тестовое задание
 
+# Рабочий пример
+http://nastestapp.jquarter.ru/currency
+
 # Установка
 1. клонировать репозиторий `git clone https://github.com/VitProg/nas-test-app`
 2. создать папку protected/runtime и web/assets  с правами на запись
