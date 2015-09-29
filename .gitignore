@@ -19,8 +19,8 @@ Thumbs.db
 /vendor
 /protected/vendor
 
-/protected/runtime
-/web/assets
+/protected/runtime/*
+/web/assets/*
 
 # composer itself is not needed
 composer.phar
