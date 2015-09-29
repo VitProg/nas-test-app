@@ -24,6 +24,7 @@ class SiteController extends Controller {
      * when an action is not explicitly requested by users.
      */
     public function actionIndex() {
+        $this->redirect(Yii::app()->urlManager->createUrl('currency/currency/date', ['date' => date('Y-m-d')]));
         Yii::app()->getModule('currency');
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'

@@ -20,8 +20,10 @@ Yii::setPathOfAlias('vendor', VENDOR_DIR);
 
 Yii::setPathOfAlias('bootstrap', VENDOR_DIR . '/clevertech/yii-booster/src');
 
-require_once(ROOT_DIR . '/protected/components/MyWebApplication.php');
+//Yii::setPathOfAlias('currency.CurrencyModule', ROOT_DIR . '/modules/currency/CurrencyModule.php');
 
+require_once(ROOT_DIR . '/protected/components/MyWebApplication.php');
+//var_dump(include($config));die();
 $app = Yii::createApplication('MyWebApplication', $config);
 $app->run();
 

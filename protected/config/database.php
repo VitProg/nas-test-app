@@ -2,10 +2,10 @@
 
 // This is the database connection configuration.
 return array(
-	'connectionString' => 'mysql:host=localhost;dbname=nas_test',
+	'connectionString' => 'mysql:host=localhost;dbname=test',
 	'tablePrefix' => false,
 	'emulatePrepare' => true,
-	'username' => 'root',
-	'password' => '',
+	'username' => 'test',
+	'password' => '789456123',
 	'charset' => 'utf8',
 );

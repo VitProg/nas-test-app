@@ -54,8 +54,8 @@ class CurrencyParser {
             try {
                 /** @var CurrencyRaw $ru */
                 /** @var CurrencyRaw $ua */
-                $ru = $data['ru'][$code] ?: null;
-                $ua = $data['ua'][$code] ?: null;
+                $ru = empty($data['ru']) == false && empty($data['ru'][$code]) == false ? $data['ru'][$code] : null;
+                $ua = empty($data['ua']) == false && empty($data['ua'][$code]) == false ? $data['ua'][$code] : null;
 
                 if (!$ru && !$ua) {
                     continue;

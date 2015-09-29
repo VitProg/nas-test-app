@@ -29,7 +29,25 @@ abstract class CurrencySourceBase {
 
         $xml = new XMLReader();
         $url = $this->getUrl($date);
-        $xml->open($url);
+        
+
+        $temp_file = tempnam(sys_get_temp_dir(), 'currency-source');
+        $fp = fopen($temp_file, 'w+');
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FILE, $fp);
+        curl_exec($ch);
+        curl_close($ch);
+        fclose($fp);
+
+
+        $xml->open($temp_file);
         $xml->setParserProperty(XMLReader::VALIDATE, false);
 
         Yii::log('Open XML from `' . $url . '`', CLogger::LEVEL_INFO, 'currency-parser');
@@ -53,6 +71,8 @@ abstract class CurrencySourceBase {
                 }
             }
         }
+
+        @unlink($temp_file);
 
         return $data;
     }

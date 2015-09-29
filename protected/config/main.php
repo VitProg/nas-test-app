@@ -23,6 +23,7 @@ return array(
 
 	'modules'=>array(
 		'currency' => [
+			'class' => 'application.modules.currency.CurrencyModule',
 		],
 
 		'gii'=>array(
@@ -60,6 +61,18 @@ return array(
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
+
+		'session' => array ( 
+		    'sessionName' => 'nas-tes-app',
+		    'class'=> 'CDbHttpSession',
+		    'autoCreateSessionTable'=> false,
+		    'connectionID' => 'db',
+		    'sessionTableName' => 'session',
+		    'useTransparentSessionID'   =>($_POST['PHPSESSID']) ? true : false,
+		    'autoStart' => 'false',
+		    'cookieMode' => 'only',
+		    'timeout' => 300,
+		),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
