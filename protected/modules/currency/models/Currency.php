@@ -58,16 +58,16 @@ class Currency extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'ID',
-            'date' => 'Date',
-            'num_code' => 'Num Code',
-            'char_code' => 'Char Code',
-            'nominal_ru' => 'Name Ru',
-            'nominal_ua' => 'Name Ru',
-            'name_ru' => 'Name Ru',
-            'name_ua' => 'Name Ua',
-            'cost_rub' => 'Cost Rub',
-            'cost_uah' => 'Cost Uah',
-            'diff' => 'Diff',
+            'date' => 'дата',
+            'num_code' => 'Числовой код',
+            'char_code' => 'Код валюты',
+            'nominal_ru' => 'Номинал (рус)',
+            'nominal_ua' => 'Номинал (укр)',
+            'name_ru' => 'Название (рус)',
+            'name_ua' => 'Название (укр)',
+            'cost_rub' => 'Стоимсоть к RUB',
+            'cost_uah' => 'Стоимсоть к UAH',
+            'diff' => 'Расхождение в стоимости валюты',
         );
     }
 
